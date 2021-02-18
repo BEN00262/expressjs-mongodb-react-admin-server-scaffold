@@ -5,6 +5,10 @@ const bookSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    userID: { 
+        type: String, 
+        required: true
+    },
     user: { type: mongoose.Types.ObjectId, ref:'user' }
 })
 

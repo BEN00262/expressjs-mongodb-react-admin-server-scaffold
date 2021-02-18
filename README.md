@@ -1,7 +1,8 @@
-## a simple admin plugin for nodejs expressjs and mongodb to work with react-admin
+### a simple admin plugin for nodejs expressjs and mongodb to work with react-admin
 
-## works with json server provider from ra-data-json-server
-## NOTE: getManyReference is not yet properly implemented 
+### works with json server provider from ra-data-json-server
+### NOTE: getManyReference is not yet properly implemented 
+### NOTE: will be implementing proper handling of reference objects in mongoose later
 
 ```javascript
 const mongoose = require("mongoose");
@@ -37,6 +38,7 @@ mongoose.connect(process.env.MONGO_URI,{
     .catch(console.error);
 ```
 
-## issues
+### issues
 
 getManyReference of the ra-data-json-server is not yet implemented properly
+the library does not handle references well in mongoose still
