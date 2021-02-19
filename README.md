@@ -52,7 +52,7 @@ const App = () => {
   return (
     <Admin dashboard={Dashboard} dataProvider={dataProvider}>
         {/* sample usage with a user resource in the admin */}
-      <Resource name="user" list={UserList} edit={UserEdit} create={UserCreate}/> 
+      <Resource name="user" list={ListGuesser} edit={EditGuesser}/> 
     </Admin>
   );
 }
