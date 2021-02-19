@@ -1,13 +1,17 @@
 {
   "name": "ra-expressjs-mongodb-scaffold",
   "version": "1.0.0",
-  "description": "",
+  "description": "this is used as a middleware in a mongodb expressjs app to provide the required routes for react-admin",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BEN00262/expressjs-mongodb-react-admin-server-scaffold.git"
+  },
+  "keywords": ["ra","react-admin","mongodb","mongoose","express"],
+  "author": "John Kerama < kerama@mitzanimedia.co.ke >",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
