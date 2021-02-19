@@ -9,12 +9,13 @@ const mongoose = require("mongoose");
 const express = require("express");
 const cors = require('cors');
 
-const { userModel,bookModel } = require("./models");
+// import your models
+const { model1,model2 } = require("< PATH TO YOUR MODELS >");
 
 require("dotenv").config();
 
-const { createAdminCRUD } = require("../lib"); // import the library
-const PORT = process.env.PORT || 3400;
+const { createAdminCRUD } = require("ra-expressjs-mongodb-scaffold"); // import the library
+const PORT = /* SET PORT */
 
 mongoose.connect(process.env.MONGO_URI,{
     useFindAndModify: false,
@@ -28,7 +29,7 @@ mongoose.connect(process.env.MONGO_URI,{
         app.use(express.json());
         app.use(express.urlencoded({extended:false}));
         
-        app.use('/admin',createAdminCRUD()); // plug it in just like any other middleware
+        app.use("< ADMIN URL ENDPOINT e.g. '/admin' >",createAdminCRUD()); // plug it in just like any other middleware
 
         app.listen(PORT,() => {
             console.log(`Server started at port: ${PORT}`)
@@ -36,6 +37,27 @@ mongoose.connect(process.env.MONGO_URI,{
 
     })
     .catch(console.error);
+```
+
+```javascript
+// react admin configuration
+// App.js
+import React from 'react';
+import { Admin,Resource, ListGuesser,EditGuesser } from 'react-admin';
+import jsonServerProvider from 'ra-data-json-server';
+
+const dataProvider = jsonServerProvider('< URL POINTING TO YOUR ADMIN ENDPOINT >');
+
+const App = () => {
+  return (
+    <Admin dashboard={Dashboard} dataProvider={dataProvider}>
+        {/* sample usage with a user resource in the admin */}
+      <Resource name="user" list={UserList} edit={UserEdit} create={UserCreate}/> 
+    </Admin>
+  );
+}
+
+export default App;
 ```
 
 ### issues
